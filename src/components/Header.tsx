@@ -13,7 +13,7 @@ const Header = (props: Props) => {
   const toggleDrawer = () => setShowDrawer((prev) => !prev)
 
   return (
-    <div className="flex w-full px-8 py-4 justify-between items-center">
+    <div className="flex w-full items-center justify-between px-8 py-4">
       <div className="flex">
         <div className="py-4">
           <LogoIcon />
@@ -26,11 +26,11 @@ const Header = (props: Props) => {
           </ul>
         </nav>
       </div>
-      <div className="space-x-4 hidden md:flex">
+      <div className="hidden space-x-4 md:flex">
         <Button>Login</Button>
         <Button variant="outline">Register</Button>
       </div>
-      <div className="block md:hidden cursor-pointer" onClick={toggleDrawer}>
+      <div className="block cursor-pointer md:hidden" onClick={toggleDrawer}>
         <MenuIcon />
       </div>
       {showDrawer && <DrawerMenu onClose={toggleDrawer} />}

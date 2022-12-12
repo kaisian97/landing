@@ -13,9 +13,9 @@ const MobileMenu = ({ data }: Props) => {
   }
 
   return (
-    <div className="text-mediumGray mt-5">
+    <div className="mt-5 text-mediumGray">
       <div
-        className="flex space-x-4 items-center mb-5 cursor-pointer"
+        className="mb-5 flex cursor-pointer items-center space-x-4"
         aria-haspopup="true"
         aria-expanded={isExpanded}
         onClick={toggleMenu}
@@ -33,13 +33,13 @@ const MobileMenu = ({ data }: Props) => {
       {!!data.children?.length && isExpanded && (
         <ul
           role="menu"
-          className="ml-6 flex flex-col space-y-4 with-transition"
+          className="with-transition ml-6 flex flex-col space-y-4"
         >
           {data.children?.map((child) => (
             <li
               key={child.label}
               role="menuitem"
-              className="flex space-x-4 cursor-pointer"
+              className="flex cursor-pointer space-x-4"
             >
               {!!child.icon && <span aria-hidden="true">{child.icon}</span>}
               <span>{child.label}</span>

@@ -18,7 +18,7 @@ const Button = ({
   }
   return (
     <button
-      className={`px-5 py-2.5 rounded-xl hover:text-almostBlack border flex items-center justify-center with-transition ${variantStyle[variant]} ${className}`}
+      className={`with-transition flex items-center justify-center rounded-xl border px-5 py-2.5 hover:text-almostBlack ${variantStyle[variant]} ${className}`}
       {...restProps}
     >
       {children}

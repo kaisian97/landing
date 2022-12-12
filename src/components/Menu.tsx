@@ -14,12 +14,12 @@ const Menu = ({ data }: Props) => {
   const hasChildren = !!data.children?.length
   return (
     <div
-      className="cursor-pointer relative px-4 py-4"
+      className="relative cursor-pointer px-4 py-4"
       onMouseEnter={showDropdown}
       onMouseLeave={hideDropdown}
     >
       <div
-        className="flex space-x-4 items-center menu-item"
+        className="menu-item flex items-center space-x-4"
         aria-expanded={isHoverring}
         aria-haspopup="true"
       >
@@ -36,14 +36,14 @@ const Menu = ({ data }: Props) => {
       {hasChildren && isHoverring && (
         <ul
           role="menu"
-          className="bg-white border border-gray-100 shadow-2xl absolute p-4 rounded-lg flex flex-col space-y-2 mt-4"
+          className="absolute mt-4 flex flex-col space-y-2 rounded-lg border border-gray-100 bg-white p-4 shadow-2xl"
         >
           {data.children?.map((child) => {
             return (
               <li
                 key={child.label}
                 role="menuitem"
-                className="flex space-x-4 items-center menu-item"
+                className="menu-item flex items-center space-x-4"
               >
                 {!!child.icon && <span aria-hidden="true">{child.icon}</span>}
                 <span className="whitespace-nowrap">{child.label}</span>
