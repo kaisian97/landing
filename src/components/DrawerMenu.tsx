@@ -13,9 +13,9 @@ const DrawerMenu = ({ onClose }: Props) => {
 
   useEffect(() => {
     // disable scroll on body
-    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
     }
   }, [])
 
@@ -25,7 +25,7 @@ const DrawerMenu = ({ onClose }: Props) => {
       <div className="absolute inset-0 bg-almostBlack/80" onClick={onClose} />
       <div
         ref={drawerRef}
-        className="absolute top-0 bottom-0 right-0 w-60 overflow-y-auto bg-almostWhite p-8"
+        className="absolute top-0 bottom-0 right-0 w-60 overflow-y-auto bg-almostWhite p-8 pb-32"
       >
         <div className="flex justify-end">
           <span className="cursor-pointer" onClick={onClose}>
